@@ -9,5 +9,8 @@ namespace Assets.Scripts
 
         public float Speed
         { get; set; }
+
+        public GameObject LookingAt
+        { get; set; }
     }
 }

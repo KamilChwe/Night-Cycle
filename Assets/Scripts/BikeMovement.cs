@@ -13,8 +13,7 @@ public class BikeMovement : MonoBehaviour
         bike.Controller = gameObject.GetComponent<CharacterController>();
     }
 
-    // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         // Get the input from both Axis and the to corresponding variables
         float x = Input.GetAxis("Horizontal");
