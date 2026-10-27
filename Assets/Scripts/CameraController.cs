@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class CameraControls : MonoBehaviour
+public class CameraController : MonoBehaviour
 {
     public float mouseSens = 100f;
 
