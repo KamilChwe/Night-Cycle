@@ -5,12 +5,13 @@ public class InteractionManager : MonoBehaviour
 {
     Player player = new Player();
     LayerMask layerMask;
-    float interactionRange = 4f;
+    float interactionRange = 6f;
+
+    Highlight outlines = new Highlight();
 
     private void Awake()
     {
         layerMask = LayerMask.GetMask("Interactable");
-        player.LookingAt = null;
     }
 
     void FixedUpdate()
@@ -20,13 +21,13 @@ public class InteractionManager : MonoBehaviour
         if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, interactionRange, layerMask))
         {
             player.LookingAt = hit.transform.gameObject;
-            hit.transform.gameObject.GetComponent<Outline>().enabled = true;
+            outlines.EnableOutline(player.LookingAt);
         }
         else
         {
             if (player.LookingAt != null)
             {
-                player.LookingAt.transform.gameObject.GetComponent<Outline>().enabled = false;
+                outlines.DisableOutline(player.LookingAt);
                 player.LookingAt = null;
             }
         }

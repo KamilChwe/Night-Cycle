@@ -1,16 +1,17 @@
+using Assets.Scripts;
 using UnityEngine;
 
 public class Highlight : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    Player player = new Player();
+
+    public void EnableOutline(GameObject interactableObject)
     {
-        
+        interactableObject.GetComponent<Outline>().enabled = true;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void DisableOutline(GameObject interactableObject)
     {
-        
+        interactableObject.GetComponent<Outline>().enabled = false;
     }
 }
